@@ -1,0 +1,26 @@
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting the default way
+
+    // Clear previous message
+    const messageElement = document.getElementById('message');
+    messageElement.textContent = '';
+
+    // Get form values
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    // Simple validation
+    if (username === '' || email === '' || password === '') {
+        messageElement.textContent = 'All fields are required!';
+        return;
+    }
+
+    // Here you can handle form submission, e.g., sending data to a server
+    // For this example, we just display a success message
+    messageElement.textContent = 'Registration successful!';
+    messageElement.style.color = 'green';
+
+    // Optionally, reset form
+    // document.getElementById('registrationForm').reset();
+});
